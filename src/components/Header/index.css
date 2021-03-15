@@ -1,0 +1,7 @@
+.menu {
+  align-items: center;
+}
+
+.active {
+  border-radius: 5px;
+}

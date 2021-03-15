@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Sidebar from "../Sidebar";
 
+import "./index.css";
+
 const items = [
   {
     label: "Início",
@@ -42,8 +44,13 @@ const Header = () => {
 
   const itemList = items.map(({ label, icon, path }) => {
     return (
-      <NavLink to={`${path}`} exact={path === "/"} key={label}>
-        <div className={`item`}>
+      <NavLink
+        to={`${path}`}
+        exact={path === "/"}
+        // activeStyle={{ height: "100%", width: "100%" }}
+        activeStyle={{ backgroundColor: "red" }}
+      >
+        <div className={`item`} key={label}>
           <i className={`${icon} icon`}></i> {label}
         </div>
       </NavLink>
@@ -59,7 +66,7 @@ const Header = () => {
     window.addEventListener("resize", handleWindowSize);
 
     return () => {
-      window.RemoveEventListener("resize", handleWindowSize);
+      window.removeEventListener("resize", handleWindowSize);
     };
   }, []);
 
@@ -89,15 +96,23 @@ const Header = () => {
           </div>
         </NavLink>
 
-        <span
-          className="item right floated link"
-          onClick={() => {
-            onToggleMenu();
-          }}
-        >
-          {width > 760 ? itemList : <i className="bars large icon"></i>}
-        </span>
-        {width > 760 ? null : <Sidebar toggle={toggle} itemList={itemList} />}
+        {width > 760 ? (
+          <>
+            <div className="right menu">{itemList}</div>
+          </>
+        ) : (
+          <>
+            <div
+              className="item right floated link"
+              onClick={() => {
+                onToggleMenu();
+              }}
+            >
+              <i className="bars large icon"></i>
+            </div>
+            <Sidebar toggle={toggle} itemList={itemList} />
+          </>
+        )}
       </div>
     </header>
   );
