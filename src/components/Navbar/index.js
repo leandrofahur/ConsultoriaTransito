@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+
 import "./index.css";
 
 const items = [
@@ -34,7 +35,7 @@ const Navbar = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const navbarRef = useRef();
-  const BREAKPOINT = 760;
+  const BREAKPOINT = 1060;
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
@@ -91,10 +92,16 @@ const Navbar = () => {
             <img src="/images/logo2.png" />
           </div>
         </NavLink>
-        <div className="right menu">
-          <div className="ui button">
-            <i className="bars icon large" onClick={() => {}}></i>
-          </div>
+        <div
+          className="ui icon dropdown button inverted"
+          onClick={() => {
+            setIsSidebarVisible(true);
+          }}
+        >
+          <i className="bars icon large"></i>
+          {isSidebarVisible ? (
+            <div className="right vertical menu">{itemList}</div>
+          ) : null}
         </div>
       </div>
     );
