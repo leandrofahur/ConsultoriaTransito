@@ -1,0 +1,20 @@
+.ui.inverted.menu {
+  padding: 0rem 1rem;
+  align-items: center;
+  font-size: medium;
+  background-color: var(--dark-color);
+  border-radius: 0%;
+}
+
+.active {
+  background-color: red;
+  border-radius: 5px;
+}
+
+.ui.inverted.menu .item.isActive {
+  background-color: var(--dark-color);
+}
+
+i.bars {
+  color: #fff;
+}
