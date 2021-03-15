@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
 import Header from "../../components/Header";
+import Carousel from "../../components/Carousel";
 
 const Homepage = () => {
   return (
     <>
       <Header />
-      <div className="ui container">Homepage</div>
+      <Carousel />
+      <main>
+        <div className="ui container"></div>
+      </main>
     </>
   );
 };
