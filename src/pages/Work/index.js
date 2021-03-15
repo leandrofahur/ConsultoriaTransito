@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../../components/Header";
 
-const About = () => {
+const Work = () => {
   return (
     <>
       <Header />
-      <div className="ui container">About</div>
+      <div className="ui container">Work</div>
     </>
   );
 };
 
-export default About;
+export default Work;

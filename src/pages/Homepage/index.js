@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
-import Navbar from "../../components/Navbar";
+import Header from "../../components/Header";
 
 const Homepage = () => {
   return (
     <>
-      <Navbar />
-      <div>Homepage</div>
+      <Header />
+      <div className="ui container">Homepage</div>
     </>
   );
 };

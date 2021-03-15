@@ -3,15 +3,18 @@ import { Switch, Route } from "react-router-dom";
 
 import Homepage from "../pages/Homepage";
 import About from "../pages/About";
+import Work from "../pages/Work";
+import Blog from "../pages/Blog";
+import Contact from "../pages/Contact";
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Homepage} />
-      <Route exact path="/sobre" component={About} />
-      {/* <Route to="/servicos" component={Work} /> */}
-      {/* <Route to="/blog" component={Blog} /> */}
-      {/* <Route to="/contato" component={Contact} /> */}
+      <Route path="/sobre" component={About} />
+      <Route path="/servicos" component={Work} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/contato" component={Contact} />
     </Switch>
   );
 };
