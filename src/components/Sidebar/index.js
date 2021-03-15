@@ -2,9 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ toggle, itemList }) => {
-  const sidebarList = itemList.map((item) => {
+  const sidebarList = itemList.map((item, index) => {
     return (
-      <div className="item" key={item.label}>
+      <div className="item" key={index}>
         {item}
       </div>
     );
