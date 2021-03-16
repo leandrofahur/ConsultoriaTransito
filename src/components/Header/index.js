@@ -44,16 +44,18 @@ const Header = () => {
 
   const itemList = items.map(({ label, icon, path }) => {
     return (
-      <NavLink
-        to={`${path}`}
-        exact={path === "/"}
-        // activeStyle={{ height: "100%", width: "100%" }}
-        activeStyle={{ backgroundColor: "red" }}
-      >
-        <div className={`item`} key={label}>
-          <i className={`${icon} icon`}></i> {label}
-        </div>
-      </NavLink>
+      <div key={icon}>
+        <NavLink
+          to={`${path}`}
+          exact={path === "/"}
+          // activeStyle={{ height: "100%", width: "100%" }}
+          activeStyle={{ backgroundColor: "red" }}
+        >
+          <div className={`item`} key={label}>
+            <i className={`${icon} icon`}></i> {label}
+          </div>
+        </NavLink>
+      </div>
     );
   });
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 
 const images = [
@@ -8,14 +8,26 @@ const images = [
 ];
 
 const Carousel = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    console.log(current);
+    const id = setTimeout(() => {
+      setCurrent((current + 1) % images.length);
+    }, 1500);
+    return () => {
+      clearInterval(id);
+    };
+  }, [current]);
+
   const imageList = images.map((image) => {
-    return <img className="ui fluid image" src={image}></img>;
+    return (
+      <div key={image}>
+        <img className="ui fluid image" src={image} key={image}></img>
+      </div>
+    );
   });
-  return (
-    <div>
-      <div>{imageList}</div>
-    </div>
-  );
+  return <div>{imageList[current]}</div>;
 };
 
 export default Carousel;
