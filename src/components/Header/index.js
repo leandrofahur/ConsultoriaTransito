@@ -44,18 +44,17 @@ const Header = () => {
 
   const itemList = items.map(({ label, icon, path }) => {
     return (
-      <div key={icon}>
-        <NavLink
-          to={`${path}`}
-          exact={path === "/"}
-          // activeStyle={{ height: "100%", width: "100%" }}
-          activeStyle={{ backgroundColor: "red" }}
-        >
-          <div className={`item`} key={label}>
-            <i className={`${icon} icon`}></i> {label}
-          </div>
-        </NavLink>
-      </div>
+      <NavLink
+        to={`${path}`}
+        exact={path === "/"}
+        // activeStyle={{ height: "100%", width: "100%" }}
+        activeStyle={{ backgroundColor: "red" }}
+        key={icon}
+      >
+        <div className={`item`} key={label}>
+          <i className={`${icon} icon`}></i> {label}
+        </div>
+      </NavLink>
     );
   });
 
@@ -94,7 +93,7 @@ const Header = () => {
       >
         <NavLink to="/" exact>
           <div className={`item`}>
-            <img src="/images/logo2.png" />
+            <img src="/images/logo2.png" alt="" />
           </div>
         </NavLink>
 

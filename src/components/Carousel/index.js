@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./index.css";
 
 const images = [
@@ -8,11 +8,11 @@ const images = [
   "/images/cover3.jpeg",
 ];
 
-const Carousel = () => {
+const Carousel = ({ logo = null }) => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const id = setTimeout(() => {
+    const id = setInterval(() => {
       setCurrent((current + 1) % images.length);
     }, 2100);
     return () => {
@@ -23,10 +23,14 @@ const Carousel = () => {
   const imageList = images.map((image) => {
     return (
       <div key={image}>
+        {/* <i className="huge icon">
+          <img src={logo} className="pos"></img>
+        </i> */}
         <img
           className="ui fluid image kenburns-top layer"
           src={image}
           key={image}
+          alt=""
         ></img>
         {/* <div className="label link pos">
           Photo by{" "}
