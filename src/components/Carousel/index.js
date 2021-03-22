@@ -23,11 +23,8 @@ const Carousel = ({ logo = null }) => {
   const imageList = images.map((image) => {
     return (
       <div key={image}>
-        {/* <i className="huge icon">
-          <img src={logo} className="pos"></img>
-        </i> */}
         <img
-          className="ui fluid image kenburns-top layer"
+          className="ui fluid image kenburns-top"
           src={image}
           key={image}
           alt=""
@@ -44,7 +41,7 @@ const Carousel = ({ logo = null }) => {
       </div>
     );
   });
-  return <div>{imageList[current]}</div>;
+  return <div className="pos">{imageList[current]}</div>;
 };
 
 export default Carousel;
