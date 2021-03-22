@@ -32,7 +32,7 @@ const items = [
   },
 ];
 
-const Header = () => {
+const Navbar = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [toggle, setToggle] = useState(false);
 
@@ -86,7 +86,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header>
+    <Navbar>
       <div
         ref={width > 760 ? null : menuRef}
         className="ui top inverted attached menu"
